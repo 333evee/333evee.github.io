@@ -1,0 +1,30 @@
+https://www.htmlgoodies.com/html5/how-to-make-a-photo-collage-using-html5-and-css3/
+
++ minor fixes & added dependencies
+
+
+debugging notes:
+
+https://stackoverflow.com/questions/21661113/jquery-error-during-load-failed-to-execute-query-x-is-not-a-valid-selecto
+
+this jQuery bug ticket that seems like what you're experiencing, another one on StackOverflow describing the problem and a longer discussion about it on another jQuery bug ticket.
+Although, it seems like it's not tagged as a bug as it's jQuery's internal error checking/exceptions being thrown.
+
+As the comment by jQuery team describes:
+
+    Resolution set to notabug
+
+    Don't break on caught exceptions. We caught it because we expected it.
+
+
+
+it's not a bug in jQuery per se, it's part of jQuery needing to function across browsers and platforms that in turn have various bugs. in this case they need to know if a browser throws an error or not, where not throwing is an incorrect behavior, but they still need to handle that. in other words, the correct behavior is this exception, but some browsers don't throw it, and jQuery needs to know that. – 
+Peter S Magnusson
+Commented Sep 19, 2017 at 4:15
+granted, they should be able to figure out a way to inform you what's going on a little faster, such as an exception message that references a URL with an explanation, or something along those lines. as things stand, this appears to be an unavoidable part of the learning curve of using jQuery. – 
+
+Soemtimes the reality is you just can't detect things until an exception is thrown. For a library like jQuery this is almost certainly unavoidable in some parts... If this is hindering your own debugging though I find that blackboxing the script in your devtools works wonders (at least in Chrome). – 
+Barak Gall
+Commented Jun 17, 2019 at 16:58
+
+
