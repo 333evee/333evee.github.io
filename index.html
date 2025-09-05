@@ -160,20 +160,19 @@
         }
 
         function sendElemClickEvent(data, num) {
-            let dstr = (typeof data == "string")? data : "-"
-            let dnum = -1
+            let dstr = (typeof data == "string")? data : "-";
+            let numstr = "-1";
             if (num != null && (typeof num === "number"))
             {
                 // optional param used: it exists, is not assigned null, and type is number
-                dnum = num;
+                numstr = String(num);
             }
             
-            gtag('event', 'elem_clicked', {
-                'data_str': data,
-                'num': dnum
+            gtag('event', 'evt_elemclicked', {
+                'prm_data': data,
+                'prm_num': numstr
             });
         }
-
 
     </script>
 
