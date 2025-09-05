@@ -23,6 +23,17 @@
         text-align: center;
         padding: 10px;
         }
+        h1 {
+            font-size: 30px;
+            margin: 8px;
+            color: #239aca;
+            text-align: center;
+        }
+        h2 {
+            font-size: 20px;
+            margin: 8px;
+            color: #015f33;
+        }
         nav {
         background-color: blue;
         padding: 10px;
@@ -48,6 +59,8 @@
         .row {
         display: flex;
         }
+    
+
     </style>
     </head>
     <body>
@@ -58,31 +71,63 @@
         <div class="row">
         <aside>Aside
             <p>Evee pocket pic</p>
+            <p>🕮 </p>
         </aside>
 
         <section>Main Section
 
             <article>Article1
-                <h1>Horses</h1>
-                <p>Lab work from some courses</p>
+                <h2>Horses</h2>
+                <p>About some courses 📚</p>
                 <div>
                     <section id="links">
-                        From the <a href="https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer" target="_blank">IBM fullstack course</a>
+                        <p>I completed several modules on the <a href="https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer" target="_blank">IBM fullstack course</a>
+                            including frontend, backend and cloud technologies, each with comprehensive coursework and lab exercises. I added
+                            <a href="https://github.com/333evee/333evee.github.io/tree/main/ibmfs" target="_blank">source code projects</a>
+                            I completed for the 
+                            <a href="https://www.coursera.org/learn/introduction-html-css-javascript" target="_blank">html, css and js module</a> for reference. 
+                        </p>
                         
-                        <a href="https://www.coursera.org/learn/introduction-html-css-javascript" target="_blank">intro modules</a>
-                        <a href="ibmfs/introHtmlCssJs/test1.html" target="_blank">test1</a>
+                        <p>The formatting is not exactly as in original editors on lab / online environment, and different tutors following different coding styles.
+                            My personal preference would be 
+                            <a href="https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Code_style_guide/JavaScript" target="_blank">MDN style</a> 
+                        </p>                    
 
                     </section>
                 </div>
             </article>
 
-            <article>Article2
-                <h1>Sandpit</h1>
-                <p>Trying out various things to see if they work...</p>
-                <a href="static-edits/map-leaflet/example-leaflet.html" target="_new">map</a>
-                <a href="static-edits/example-collage/index.html" target="_new">collage</a>
-                <a href="static-edits/example-image-hover/index.html" target="_new">hover</a>
+            <article>Article2 🌼
+                <div>
+                    <h2>Sandpit</h2>
+                    <p>Trying out various things to see if they work...</p>
+                    <a href="static-edits/map-leaflet/example-leaflet.html" target="_new">map</a>
+                    <a href="static-edits/example-collage/index.html" target="_new">collage</a>
+                    <a href="static-edits/example-image-hover/index.html" target="_new">hover</a>
+                    <a href="https://atlassian.design/components/pragmatic-drag-and-drop/examples/#drawing" target="_blank">xplat dnd</a>
+     
+                    <a href="ibmfs/introHtmlCssJs/test1.html" target="_blank" onclick="sendElemClickEvent('t1')">test1</a>
+                    <a href="ibmfs/introHtmlCssJs/lab/index-responsive-tailwind.html" target="_blank" onclick="sendElemClickEvent('t2')">test2 tailwind</a>
+                    <a href="ibmfs/introHtmlCssJs/lab/index-responsive-bootstrap.html" target="_blank" onclick="sendElemClickEvent('t3')">test3 bootstrap</a>
 
+                </div>
+                
+            </article>
+
+            <article>⭐Formatted monospace test
+                <div>
+                    <h2>★ Star ☆</h2>
+                    <pre>    
+                    Twinkle, twinkle, little star, 
+                    How I wonder what you are! 
+                    Up above the world so high, 
+                    Like a diamond in the sky.
+
+                        .⋆⭑✦⭒⋆⭑✨⭒⋆⭑✦⭒⋆.
+                        🦋✿🌷❀❉🌻𓆙🐍🌳
+                    </pre>
+                </div>
+                
             </article>
 
         </section>
@@ -91,5 +136,47 @@
         </div>
     </div>
     <footer>Footer</footer>
+
+    <script>
+        function hello() {
+            alert("Hello up there, from a js function");
+        }
+        function showDate() {
+            var now = new Date();
+            alert(now);
+        }
+        function isValidNumber(n) { return !isNaN(parseFloat(n)) && !isNaN(n - 0) }
+        function isValidNumberRegex(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); }
+
+        function incCounter() 
+        {
+            // function object can have properties, defining variable in fn scope is similar to having a static var
+            if (typeof incCounter.counter == 'undefined') {
+                incCounter.counter = 0;
+            }
+            incCounter.counter++;
+
+            return incCounter.counter;
+        }
+
+        function sendElemClickEvent(data, num) {
+            let dstr = (typeof data == "string")? data : "-"
+            let dnum = -1
+            if (num != null && (typeof num === "number"))
+            {
+                // optional param used: it exists, is not assigned null, and type is number
+                dnum = num;
+            }
+            
+            gtag('event', 'elem_clicked', {
+                'data_str': data,
+                'num': dnum
+            });
+        }
+
+
+    </script>
+
     </body>
 </html>
+
