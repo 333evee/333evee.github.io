@@ -160,6 +160,7 @@
         }
 
         function sendElemClickEvent(data, num) {
+            alert("Hello sendElemClickEvent", data);
             let dstr = (typeof data == "string")? data : "-";
             let numstr = "-1";
             if (num != null && (typeof num === "number"))
@@ -168,10 +169,10 @@
                 numstr = String(num);
             }
             
-            gtag('event', 'evt_elemclicked', {
-                'prm_data': data,
-                'prm_num': numstr
-            });
+            // gtag('event', 'evt_elemclicked', {
+            //     'prm_data': data,
+            //     'prm_num': numstr
+            // });
         }
 
     </script>
