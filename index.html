@@ -162,7 +162,7 @@
         }
 
         function sendElemClickEvent(data, num) {
-            alert("Hello sendElemClickEvent", data);
+            console.log(`sendElemClickEvent ${data}!`);
             let dstr = (typeof data == "string")? data : "-";
             let numstr = "-1";
             if (num != null && (typeof num === "number"))
