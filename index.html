@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB68JNH7G9"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,6 +14,9 @@
     </script>
         
     <title>Basic Layout</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
     <style>
         body {
         margin: 0;
@@ -24,17 +26,6 @@
         background-color: red;
         text-align: center;
         padding: 10px;
-        }
-        h1 {
-            font-size: 30px;
-            margin: 8px;
-            color: #239aca;
-            text-align: center;
-        }
-        h2 {
-            font-size: 20px;
-            margin: 8px;
-            color: #015f33;
         }
         nav {
         background-color: blue;
@@ -52,7 +43,6 @@
         article {
         background-color: lightgreen;
         padding: 10px;
-        margin: 16px;
         }
         .container {
         display: flex;
@@ -61,8 +51,6 @@
         .row {
         display: flex;
         }
-    
-
     </style>
     </head>
     <body>
@@ -71,75 +59,54 @@
 
     <div class="container">
         <div class="row">
-        <aside>Aside
-            <p>Evee pocket pic</p>
-            <p>🕮 </p>
-        </aside>
+        <aside>Aside</aside>
 
         <section>Main Section
 
-            <article>Article1
-                <h2>Horses</h2>
-                <p>About some courses 📚</p>
-                <div>
-                    <section id="links">
-                        <p>I completed several modules on the <a href="https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer" target="_blank">IBM fullstack course</a>
-                            including frontend, backend and cloud technologies, each with comprehensive coursework and lab exercises. I added
-                            <a href="https://github.com/333evee/333evee.github.io/tree/main/ibmfs" target="_blank">source code projects</a>
-                            I completed for the 
-                            <a href="https://www.coursera.org/learn/introduction-html-css-javascript" target="_blank">html, css and js module</a> for reference. 
-                        </p>
-                        
-                        <p>The formatting is not exactly as in original editors on lab / online environment, and different tutors following different coding styles.
-                            My personal preference would be 
-                            <a href="https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Code_style_guide/JavaScript" target="_blank">MDN style</a> 
-                        </p>                    
+            <p>Image and map examples, today it is <div id="result"></div>
+                <button onclick="showDate()">
+                NowAlert
+                </button>
+                Try out various things to see if they work...
+            </p>
 
-                    </section>
-                </div>
-            </article>
-
-            <article>Article2 🌼
-                <div>
-                    <h2>Sandpit</h2>
-                    <p>Trying out various things to see if they work...</p>
-                    <a href="static-edits/map-leaflet/example-leaflet.html" target="_new">map</a>
-                    <a href="static-edits/example-collage/index.html" target="_new">collage</a>
-                    <a href="static-edits/example-image-hover/index.html" target="_new">hover</a>
+            <div>
+                <section id="links">
+                    <a href="ex/example-collage/index.html" target="_new">collage</a>
+                    <a href="ex/example-image-hover/index.html" target="_new">hover</a>
+                    <a href="ex/map-leaflet/example-leaflet.html" target="_new">map</a>
                     <a href="https://atlassian.design/components/pragmatic-drag-and-drop/examples/#drawing" target="_blank">xplat dnd</a>
-     
-                    <a href="ibmfs/introHtmlCssJs/test1.html" target="_blank" onclick="sendElemClickEvent('t1')">test1</a>
-                    <a href="ibmfs/introHtmlCssJs/lab/index-responsive-tailwind.html" target="_blank" onclick="sendElemClickEvent('t2')">test2 tailwind</a>
-                    <a href="ibmfs/introHtmlCssJs/lab/index-responsive-bootstrap.html" target="_blank" onclick="sendElemClickEvent('t3')">test3 bootstrap</a>
+                </section>
+            </div>
 
-                </div>
-                
-            </article>
 
-            <article>⭐Formatted monospace test
-                <div>
-                    <h2>★ Star ☆</h2>
-                    <pre>    
-                    Twinkle, twinkle, little star, 
-                    How I wonder what you are! 
-                    Up above the world so high, 
-                    Like a diamond in the sky.
+            <p>Completed modules and lab work on front end, database and django development from the
+                <a href="https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer" target="_blank">IBM fullstack course</a>
+            </p>
 
-                        .⋆⭑✦⭒⋆⭑✨⭒⋆⭑✦⭒⋆.
-                        🦋✿🌷❀❉🌻𓆙🐍🌳
-                    </pre>
-                </div>
-                
-            </article>
+            <div>Responsive layout examples from introduction to html, css and javascript module:
+                <section id="links">              
+                    <a href="lab/index-layout-basic.html" target="_blank" onclick="sendElemClickEvent('t1')">test1 layout</a>
+                    <a href="lab/index-responsive-tailwind.html" target="_blank" onclick="sendElemClickEvent('t2')">test2 tailwind</a>
+                    <a href="lab/index-responsive-bootstrap.html" target="_blank" onclick="sendElemClickEvent('t3')">test3 bootsrap</a>
+                </section>
+            </div>
 
         </section>
-       
+
+
+        <article>Article
+            
+        </article>
 
         </div>
     </div>
     <footer>Footer</footer>
 
     <script>
+
+        document.getElementById("result").innerHTML = new Date();
+
         function hello() {
             alert("Hello up there, from a js function");
         }
@@ -171,14 +138,13 @@
                 numstr = String(num);
             }
             
-            // gtag('event', 'evt_elemclicked', {
-            //     'prm_data': data,
-            //     'prm_num': numstr
-            // });
+            gtag('event', 'evt_elemclicked', {
+                'prm_data': data,
+                'prm_num': numstr
+            });
         }
 
     </script>
 
     </body>
 </html>
-
