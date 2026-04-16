@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB68JNH7G9"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB68JNH7G9" onerror="window.dataLayer = "stop"; alert('async script error!')"></script>
     <script>
+      if (window.dataLayer !== "stop")
+      {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
       gtag('config', 'G-XB68JNH7G9');
+      }
     </script>
         
     <title>Basic Layout</title>
